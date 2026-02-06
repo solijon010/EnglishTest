@@ -187,6 +187,27 @@ body {
   border-radius: 999px;
 }
 
+@media (max-width: 900px) {
+  body {
+    height: auto;
+    overflow: auto;
+  }
+
+  #app {
+    height: auto;
+  }
+
+  .top,
+  .controls {
+    position: static;
+  }
+
+  .content-scroll {
+    overflow: visible;
+    padding-right: 0;
+  }
+}
+
 .panel-header h2 {
   margin: 0 0 6px;
   font-size: 1.2rem;
