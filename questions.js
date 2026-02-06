@@ -1,0 +1,2562 @@
+const QUESTIONS = [
+  {
+    "q": "My older brother usually takes care of our grandparents at the weekend.",
+    "options": [
+      "takes",
+      "take",
+      "is taking",
+      "took"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the sentence that describes a general fact.",
+    "options": [
+      "He lives close to his relatives.",
+      "He is living close to his relatives now.",
+      "He lived close to his relatives last year.",
+      "He will live close to his relatives soon."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "How often do your friends support you in difficult situations?",
+    "options": [
+      "do",
+      "does",
+      "are",
+      "did"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct sentence.",
+    "options": [
+      "My family members support each other.",
+      "My family members supports each other.",
+      "My family member support each others.",
+      "My family member supports each other."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Many computer users rely on online platforms for communication.",
+    "options": [
+      "users",
+      "user",
+      "useres",
+      "usage"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct plural form of mouse (computer device).",
+    "options": [
+      "mice",
+      "mouses",
+      "mouse",
+      "mices"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Each user is required to create a strong password.",
+    "options": [
+      "user",
+      "users",
+      "usage",
+      "using"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the grammatically correct sentence.",
+    "options": [
+      "This software is regularly updated.",
+      "These software are regularly updated.",
+      "This softwares are regularly updated.",
+      "These softwares is regularly updated."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A person who understands others’ emotions well is empathetic.",
+    "options": [
+      "empathetic",
+      "careless",
+      "impatient",
+      "selfish"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the best sentence for a personal profile.",
+    "options": [
+      "I am a motivated and responsible individual.",
+      "I motivated and responsibility person.",
+      "I am motivate and responsible.",
+      "I was responsible person now."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Someone who never gives up easily is determined.",
+    "options": [
+      "determined",
+      "lazy",
+      "careless",
+      "shy"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "He is more confident than his peers in professional communication.",
+    "options": [
+      "more confident",
+      "most confident",
+      "confident",
+      "confidence"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "I usually use a laptop for academic work.",
+    "options": [
+      "usually",
+      "never",
+      "rarely",
+      "hardly"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The conference will take place on Friday afternoon.",
+    "options": [
+      "on",
+      "in",
+      "at",
+      "by"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Tablets are widely used for portability and convenience.",
+    "options": [
+      "for",
+      "during",
+      "by",
+      "since"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct word order.",
+    "options": [
+      "He is always on time for online meetings.",
+      "He always is on time for online meetings.",
+      "He is on time always for online meetings.",
+      "Always he is on time for online meetings."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Emails are checked every morning by the system.",
+    "options": [
+      "are checked",
+      "is checked",
+      "check",
+      "checked"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "My daily routine starts at 6:30 a.m.",
+    "options": [
+      "starts",
+      "start",
+      "is started",
+      "starting"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Reports are prepared weekly in this company.",
+    "options": [
+      "are prepared",
+      "prepare",
+      "is prepared",
+      "prepared"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the Present Simple Passive sentence.",
+    "options": [
+      "The office is cleaned every day.",
+      "They clean the office every day.",
+      "The office cleaned every day.",
+      "The office was cleaned every day."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "She is wearing a formal suit for the conference today.",
+    "options": [
+      "is wearing",
+      "wears",
+      "wore",
+      "has worn"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Look! The students are trying on new uniforms.",
+    "options": [
+      "are trying on",
+      "try on",
+      "tried on",
+      "have tried on"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Why ___ you are changing your clothes now?",
+    "options": [
+      "are you changing",
+      "do you change",
+      "have you changed",
+      "did you change"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct sentence.",
+    "options": [
+      "He is looking for a jacket that fits him well.",
+      "He looks for a jacket now.",
+      "He looked for a jacket now.",
+      "He has look for a jacket."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The opposite of generous is selfish.",
+    "options": [
+      "selfish",
+      "kind",
+      "helpful",
+      "friendly"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct informal sentence.",
+    "options": [
+      "I hope you are doing well and enjoying your holidays.",
+      "I hereby inform you about my vacation.",
+      "This letter is written to notify you.",
+      "I am writing for official purposes."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The opposite of modern is traditional.",
+    "options": [
+      "traditional",
+      "popular",
+      "expensive",
+      "creative"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Which sentence is suitable for an informal letter?",
+    "options": [
+      "Can’t wait to hear from you soon!",
+      "I look forward to your response.",
+      "Please find the attached document.",
+      "Yours faithfully."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "There is a healthy salad on the menu today.",
+    "options": [
+      "There is",
+      "There are",
+      "It is",
+      "They are"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "There are several fruits rich in vitamins.",
+    "options": [
+      "There are",
+      "There is",
+      "It has",
+      "They have"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct sentence.",
+    "options": [
+      "There is little sugar in this dessert.",
+      "There are little sugar in this dessert.",
+      "There is few sugar in this dessert.",
+      "There are few sugar in this dessert."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Which option is grammatically correct?",
+    "options": [
+      "There are many healthy options available.",
+      "There is many healthy options available.",
+      "There are much healthy options available.",
+      "There is much healthy options available."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "We need new equipment for the computer lab.",
+    "options": [
+      "equipment",
+      "equipments",
+      "an equipment",
+      "pieces equipments"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A computer consists of several essential components.",
+    "options": [
+      "components",
+      "component",
+      "componentes",
+      "component’s"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "How much memory does this device have?",
+    "options": [
+      "memory",
+      "memories",
+      "a memory",
+      "many memory"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct sentence.",
+    "options": [
+      "There is a lot of hardware in this office.",
+      "There are many hardware in this office.",
+      "There is many hardwares in this office.",
+      "There are much hardwares in this office."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "There are plenty of seats available for the event.",
+    "options": [
+      "plenty of ✅",
+      "much",
+      "little",
+      "a few"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "We have a few guests coming from abroad.",
+    "options": [
+      "a few",
+      "a little",
+      "much",
+      "plenty"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct sentence for an invitation letter.",
+    "options": [
+      "We would be delighted if you could join us.",
+      "You must attend this event.",
+      "Attendance is obligatory.",
+      "This letter is sent for official notice."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Which closing is appropriate for an invitation?",
+    "options": [
+      "Looking forward to seeing you.",
+      "Yours faithfully.",
+      "With official respect.",
+      "Signed and approved."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The printer is placed next to the computer desk.",
+    "options": [
+      "next to",
+      "between",
+      "behind",
+      "under"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The webcam is located on top of the monitor.",
+    "options": [
+      "on top of",
+      "under",
+      "inside",
+      "between"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct sentence.",
+    "options": [
+      "The keyboard is in front of the monitor.",
+      "The keyboard is behind of the monitor.",
+      "The keyboard is front the monitor.",
+      "The keyboard is at front monitor."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "External speakers are connected to the computer.",
+    "options": [
+      "to",
+      "at",
+      "in",
+      "on"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "This software is more user-friendly than the previous version.",
+    "options": [
+      "more user-friendly",
+      "most user-friendly",
+      "user-friendly",
+      "friendlier"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Antivirus programs are becoming more effective each year.",
+    "options": [
+      "more effective",
+      "most effective",
+      "effective",
+      "effectiveness"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "This application runs faster than older programs.",
+    "options": [
+      "faster",
+      "fastest",
+      "more fast",
+      "most fast"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct sentence.",
+    "options": [
+      "This is the most reliable software on the market.",
+      "This is the more reliable software on the market.",
+      "This is the reliable software on the market.",
+      "This is most reliable than others."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Could you tell me how to get to the IT department?",
+    "options": [
+      "how to get to",
+      "how get to",
+      "how getting to",
+      "how got to"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Go straight ahead and turn left at the second crossing.",
+    "options": [
+      "turn left",
+      "turn to left",
+      "turn on left",
+      "turn into left"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "In a computer advertisement, specifications give technical details.",
+    "options": [
+      "specifications",
+      "directions",
+      "locations",
+      "opinions"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct sentence.",
+    "options": [
+      "The ad highlights the processor speed and memory size.",
+      "The ad is highlight processor speed.",
+      "The ad highlighted now the speed.",
+      "The ad highlightings the processor."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The company released a new interface last year.",
+    "options": [
+      "released",
+      "releases",
+      "is releasing",
+      "has released"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "GUI made computers easier to use for beginners.",
+    "options": [
+      "made",
+      "make",
+      "makes",
+      "making"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "We learned about graphical interfaces in yesterday’s lesson.",
+    "options": [
+      "learned",
+      "learn",
+      "have learned",
+      "learning"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct Past Simple sentence.",
+    "options": [
+      "The first GUI appeared in the 1980s.",
+      "The first GUI appears in the 1980s.",
+      "The first GUI has appeared in the 1980s.",
+      "The first GUI is appearing in the 1980s."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Users must install updates to protect the system.",
+    "options": [
+      "must",
+      "might",
+      "would",
+      "could"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "You can customize the operating system settings.",
+    "options": [
+      "can",
+      "must",
+      "should not",
+      "need"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The system should be restarted after installation.",
+    "options": [
+      "should",
+      "can",
+      "may",
+      "will"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct sentence.",
+    "options": [
+      "An operating system can manage hardware resources.",
+      "An operating system managing hardware resources.",
+      "An operating system managed hardware now.",
+      "An operating system manage hardware resources."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "We had to update the software to fix the error.",
+    "options": [
+      "had to",
+      "must",
+      "have to",
+      "has to"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The issue could have been avoided with proper testing.",
+    "options": [
+      "could have been",
+      "can be",
+      "could be",
+      "must be"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Users should have backed up their data earlier.",
+    "options": [
+      "should have backed up",
+      "should back up",
+      "should be backing up",
+      "should backs up"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct sentence.",
+    "options": [
+      "The data might have been lost during the transfer.",
+      "The data might lost during the transfer.",
+      "The data might be lose during the transfer.",
+      "The data might losing during the transfer."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Cybersecurity experts have identified several major threats this year.",
+    "options": [
+      "have identified",
+      "identified",
+      "are identifying",
+      "identify"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Many companies have invested heavily in data protection systems.",
+    "options": [
+      "have invested",
+      "invested",
+      "invest",
+      "are investing"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Hackers have targeted weak security systems in recent years.",
+    "options": [
+      "have targeted",
+      "target",
+      "targeted",
+      "are targeting"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct sentence.",
+    "options": [
+      "Cybersecurity has become essential in the digital age.",
+      "Cybersecurity became essential just now.",
+      "Cybersecurity is become essential.",
+      "Cybersecurity has becoming essential."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "First, the network design is planned before installation.",
+    "options": [
+      "First",
+      "Finally",
+      "Meanwhile",
+      "Although"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Next, the devices are connected to the network.",
+    "options": [
+      "Next",
+      "However",
+      "Because",
+      "Instead"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Finally, the system is tested for errors.",
+    "options": [
+      "Finally",
+      "Firstly",
+      "Suddenly",
+      "Unless"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct sentence.",
+    "options": [
+      "The network was configured step by step.",
+      "The network configured step by step.",
+      "The network was configuring step by step.",
+      "The network configures step by step."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The technician set up the new server successfully.",
+    "options": [
+      "set up",
+      "set off",
+      "set out",
+      "set aside"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The system automatically shuts down during overheating.",
+    "options": [
+      "shuts down",
+      "shuts off at",
+      "shuts in",
+      "shuts over"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Engineers must carry out regular network checks.",
+    "options": [
+      "carry out",
+      "carry on",
+      "carry over",
+      "carry away"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct sentence.",
+    "options": [
+      "A star topology connects all devices to a central hub.",
+      "A star topology connecting all devices.",
+      "A star topology connect all devices.",
+      "A star topology connected all device."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "I will join the gym next month.",
+    "options": [
+      "will join",
+      "join",
+      "am joining",
+      "joined"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "She will practice basketball regularly this season.",
+    "options": [
+      "will practice",
+      "practices",
+      "practiced",
+      "is practicing"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "We will watch the final match together.",
+    "options": [
+      "will watch",
+      "watch",
+      "watched",
+      "are watching"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct sentence.",
+    "options": [
+      "He will improve his skills through daily training.",
+      "He improve his skills next week.",
+      "He is improve his skills.",
+      "He will improving his skills."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Every developer must update their skills regularly.",
+    "options": [
+      "their",
+      "his",
+      "her",
+      "its"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The manager assigned the task to me yesterday.",
+    "options": [
+      "me",
+      "I",
+      "my",
+      "mine"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "This software tool is ours, not theirs.",
+    "options": [
+      "ours",
+      "our",
+      "us",
+      "we"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct sentence.",
+    "options": [
+      "IT specialists often collaborate with each other.",
+      "IT specialists often collaborate with themself.",
+      "IT specialists often collaborates with each other.",
+      "IT specialists often collaborating each other."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "You should update your password regularly to improve security.",
+    "options": [
+      "should",
+      "might",
+      "would",
+      "could"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "I recommend using strong encryption methods.",
+    "options": [
+      "recommend",
+      "recommend to",
+      "recommending",
+      "recommended to"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the most appropriate comment.",
+    "options": [
+      "I think this feature works well, but it could be improved.",
+      "This feature must be improved immediately.",
+      "You did everything wrong here.",
+      "This is unacceptable work."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Which sentence gives polite advice?",
+    "options": [
+      "You might want to check the system settings.",
+      "Check the system settings now.",
+      "You must check the system settings.",
+      "You have checked the system settings."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Please make sure the website is mobile-friendly.",
+    "options": [
+      "make",
+      "do",
+      "have",
+      "take"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The company launched a new website last month.",
+    "options": [
+      "launched",
+      "did",
+      "made",
+      "took"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Users often take advantage of online tutorials.",
+    "options": [
+      "take",
+      "do",
+      "make",
+      "bring"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct sentence.",
+    "options": [
+      "The website provides useful information for visitors.",
+      "The website does useful information.",
+      "The website makes useful information.",
+      "The website brings useful information."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A security system is a set of devices that protect a building.",
+    "options": [
+      "that",
+      "who",
+      "where",
+      "when"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "This is the software which detects unauthorized access.",
+    "options": [
+      "which",
+      "who",
+      "whose",
+      "whom"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Choose the correct sentence.",
+    "options": [
+      "A firewall is a tool that controls network traffic.",
+      "A firewall is a tool controls network traffic.",
+      "A firewall is a tool which control network traffic.",
+      "A firewall is a tool who controls network traffic."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Which sentence uses a relative clause correctly?",
+    "options": [
+      "A security system that monitors activity improves safety.",
+      "A security system monitors that activity improves safety.",
+      "A security system that monitor activity improves safety.",
+      "A security system monitors activity that improves."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "My brother ___ to work every day.",
+    "options": [
+      "goes",
+      "go",
+      "is going",
+      "went"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "She ___ her parents on weekends.",
+    "options": [
+      "visits",
+      "visit",
+      "is visiting",
+      "visited"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "We ___ dinner together every evening.",
+    "options": [
+      "have",
+      "has",
+      "had",
+      "having"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "My best friend ___ very kind and helpful.",
+    "options": [
+      "is",
+      "are",
+      "am",
+      "be"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "They ___ in the same neighborhood.",
+    "options": [
+      "live",
+      "lives",
+      "lived",
+      "living"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "My sister usually ___ me with homework.",
+    "options": [
+      "helps",
+      "help",
+      "helped",
+      "helping"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Our grandparents ___ stories about the past.",
+    "options": [
+      "tell",
+      "tells",
+      "told",
+      "telling"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "He ___ his family very much.",
+    "options": [
+      "loves",
+      "love",
+      "loved",
+      "loving"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "One mouse – two ___.",
+    "options": [
+      "mice",
+      "mouses",
+      "mouse",
+      "mic"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A computer user has many ___.",
+    "options": [
+      "passwords",
+      "password",
+      "passwordes",
+      "passwards"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "One child uses a computer, two ___ use computers.",
+    "options": [
+      "children",
+      "childs",
+      "child",
+      "childrens"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "There are many ___ in the computer lab.",
+    "options": [
+      "computers",
+      "computer",
+      "computering",
+      "comput"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A person who uses computers is a ___.",
+    "options": [
+      "user",
+      "uses",
+      "using",
+      "usage"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "My brother has two ___.",
+    "options": [
+      "laptops",
+      "laptopes",
+      "laptop",
+      "laptos"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "One file – many ___.",
+    "options": [
+      "files",
+      "file",
+      "filies",
+      "fyles"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Many ___ work online today.",
+    "options": [
+      "programmers",
+      "programmer",
+      "program",
+      "programming"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A person who always tells the truth is ___.",
+    "options": [
+      "honest",
+      "lazy",
+      "rude",
+      "shy"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "My friend is very ___; she always helps others.",
+    "options": [
+      "kind",
+      "angry",
+      "selfish",
+      "quiet"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "He works hard and never gives up. He is ___.",
+    "options": [
+      "hardworking",
+      "careless",
+      "nervous",
+      "weak"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A ___ person likes meeting new people.",
+    "options": [
+      "friendly",
+      "cruel",
+      "lazy",
+      "serious"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Someone who thinks only about themselves is ___.",
+    "options": [
+      "selfish",
+      "polite",
+      "generous",
+      "calm"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "In my personal profile, I describe my ___.",
+    "options": [
+      "personality",
+      "location",
+      "salary",
+      "problems"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "She is always calm and relaxed. She is ___.",
+    "options": [
+      "patient",
+      "noisy",
+      "rude",
+      "careless"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A person who learns quickly is ___.",
+    "options": [
+      "intelligent",
+      "lazy",
+      "shy",
+      "slow"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "I ___ use my computer in the evening.",
+    "options": [
+      "usually",
+      "never",
+      "yesterday",
+      "soon"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "She ___ forgets her password.",
+    "options": [
+      "never",
+      "always",
+      "often",
+      "sometimes"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "We have English classes ___ Monday.",
+    "options": [
+      "on",
+      "in",
+      "at",
+      "from"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "He studies at night ___ 9 p.m.",
+    "options": [
+      "at",
+      "on",
+      "in",
+      "by"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A laptop is a ___ computer.",
+    "options": [
+      "portable",
+      "heavy",
+      "broken",
+      "useless"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "I ___ work on my computer after school.",
+    "options": [
+      "often",
+      "yesterday",
+      "now",
+      "tomorrow"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "My birthday is ___ June.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "from"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A desktop computer is usually used ___ home.",
+    "options": [
+      "at",
+      "on",
+      "in",
+      "by"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "English ___ all over the world.",
+    "options": [
+      "is spoken",
+      "speaks",
+      "spoke",
+      "speaking"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Breakfast ___ at 7 a.m. every day.",
+    "options": [
+      "is prepared",
+      "prepares",
+      "prepared",
+      "preparing"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The room ___ every morning.",
+    "options": [
+      "is cleaned",
+      "cleans",
+      "cleaned",
+      "cleaning"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Emails ___ by the manager.",
+    "options": [
+      "are checked",
+      "check",
+      "checked",
+      "checking"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The lesson ___ by the teacher.",
+    "options": [
+      "is explained",
+      "explains",
+      "explained",
+      "explaining"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Homework ___ at home in the evening.",
+    "options": [
+      "is done",
+      "does",
+      "did",
+      "doing"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Computers ___ in many offices.",
+    "options": [
+      "are used",
+      "use",
+      "used",
+      "using"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The door ___ every morning.",
+    "options": [
+      "is opened",
+      "opens",
+      "opened",
+      "opening"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "She ___ a blue dress today.",
+    "options": [
+      "is wearing",
+      "wears",
+      "wore",
+      "wear"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "They ___ jeans and T-shirts now.",
+    "options": [
+      "are wearing",
+      "wear",
+      "wore",
+      "wearing"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "I ___ my jacket because it is cold.",
+    "options": [
+      "am putting on",
+      "put on",
+      "puts on",
+      "putted on"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "He ___ a new shirt at the moment.",
+    "options": [
+      "is trying",
+      "tries",
+      "tried",
+      "try"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "We ___ for clothes in the mall now.",
+    "options": [
+      "are shopping",
+      "shop",
+      "shopped",
+      "shopping"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "She ___ her shoes right now.",
+    "options": [
+      "is changing",
+      "changes",
+      "changed",
+      "change"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The opposite of big is ___.",
+    "options": [
+      "small",
+      "tall",
+      "wide",
+      "long"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The opposite of happy is ___.",
+    "options": [
+      "sad",
+      "angry",
+      "tired",
+      "excited"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "An informal letter is written to ___.",
+    "options": [
+      "a friend",
+      "a boss",
+      "a teacher",
+      "a company"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The opposite of easy is ___.",
+    "options": [
+      "difficult",
+      "simple",
+      "short",
+      "quick"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "In an informal letter, the language is ___.",
+    "options": [
+      "friendly",
+      "official",
+      "formal",
+      "strict"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The opposite of fast is ___.",
+    "options": [
+      "slow",
+      "quick",
+      "early",
+      "sudden"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "___ some apples on the table.",
+    "options": [
+      "There are",
+      "There is",
+      "There was",
+      "There be"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "___ a glass of milk in the fridge.",
+    "options": [
+      "There is",
+      "There are",
+      "There were",
+      "There have"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "There ___ many vegetables in the soup.",
+    "options": [
+      "are",
+      "is",
+      "was",
+      "be"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "___ any bread left?",
+    "options": [
+      "Is there",
+      "Are there",
+      "There are",
+      "There is"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "There is ___ cheese in the sandwich.",
+    "options": [
+      "some",
+      "many",
+      "few",
+      "a few"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "___ two bananas in my bag.",
+    "options": [
+      "There are",
+      "There is",
+      "There was",
+      "There be"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A keyboard is a ___ noun.",
+    "options": [
+      "countable",
+      "uncountable",
+      "abstract",
+      "plural"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Information is an ___ noun.",
+    "options": [
+      "uncountable",
+      "countable",
+      "plural",
+      "common"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "There are three ___ on the desk.",
+    "options": [
+      "monitors",
+      "monitor",
+      "monitoring",
+      "monitories"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "We need some new computer ___.",
+    "options": [
+      "hardware",
+      "hardwares",
+      "device",
+      "tools"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A mouse is a piece of computer ___.",
+    "options": [
+      "hardware",
+      "software",
+      "data",
+      "program"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "You cannot count ___.",
+    "options": [
+      "electricity",
+      "printers",
+      "cables",
+      "speakers"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "I have ___ friends at the party.",
+    "options": [
+      "many",
+      "much",
+      "little",
+      "a little"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "There is ___ water in the bottle.",
+    "options": [
+      "some",
+      "many",
+      "few",
+      "a few"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "An invitation letter is written to ___.",
+    "options": [
+      "invite someone",
+      "complain",
+      "apologize",
+      "inform officially"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "We need ___ chairs for the guests.",
+    "options": [
+      "a lot of",
+      "much",
+      "little",
+      "less"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "There are ___ people waiting outside.",
+    "options": [
+      "a few",
+      "much",
+      "little",
+      "less"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Invitation letters usually include date and ___.",
+    "options": [
+      "place",
+      "problem",
+      "price",
+      "result"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The printer is ___ the desk.",
+    "options": [
+      "on",
+      "in",
+      "under",
+      "behind"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The mouse is ___ the keyboard.",
+    "options": [
+      "next to",
+      "between",
+      "above",
+      "inside"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The scanner is ___ the computer and the printer.",
+    "options": [
+      "between",
+      "under",
+      "on",
+      "behind"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A printer is a computer ___.",
+    "options": [
+      "peripheral",
+      "software",
+      "file",
+      "system"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The speakers are ___ the monitor.",
+    "options": [
+      "near",
+      "into",
+      "inside",
+      "onto"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "This program is ___ than the old one.",
+    "options": [
+      "better",
+      "good",
+      "best",
+      "well"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Windows is one of the ___ operating systems.",
+    "options": [
+      "most popular",
+      "more popular",
+      "popular",
+      "popularity"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "This software is ___ expensive than that one.",
+    "options": [
+      "less",
+      "more",
+      "most",
+      "very"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Antivirus software is ___ important tool.",
+    "options": [
+      "the most",
+      "more",
+      "much",
+      "many"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "This version works ___ than the previous one.",
+    "options": [
+      "faster",
+      "fast",
+      "fastest",
+      "fastly"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Excuse me, how can I ___ to the nearest bank?",
+    "options": [
+      "get",
+      "getting",
+      "got",
+      "gets"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Go straight and then ___ left.",
+    "options": [
+      "turn",
+      "turns",
+      "turning",
+      "turned"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The library is ___ the post office.",
+    "options": [
+      "next to",
+      "next",
+      "near to",
+      "beside of"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Computer ads usually give information about ___.",
+    "options": [
+      "specifications",
+      "directions",
+      "rules",
+      "stories"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "“Affordable price” in a computer ad means ___.",
+    "options": [
+      "not expensive",
+      "very fast",
+      "very large",
+      "very old"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "You should read a computer ad carefully to choose the ___ device.",
+    "options": [
+      "right",
+      "wrong",
+      "broken",
+      "unused"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "I ___ my first computer in 2018.",
+    "options": [
+      "bought",
+      "buy",
+      "buys",
+      "buying"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "She ___ a new program yesterday.",
+    "options": [
+      "installed",
+      "installs",
+      "install",
+      "installing"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "We ___ how to use the software last week.",
+    "options": [
+      "learned",
+      "learn",
+      "learns",
+      "learning"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "GUI stands for ___.",
+    "options": [
+      "Graphical User Interface",
+      "General User Internet",
+      "Graphic Universal Input",
+      "Global User Interface"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A GUI ___ icons and menus.",
+    "options": [
+      "uses",
+      "use",
+      "used",
+      "using"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The teacher ___ the GUI clearly.",
+    "options": [
+      "explained",
+      "explains",
+      "explain",
+      "explaining"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "You ___ save your work before closing the program.",
+    "options": [
+      "should",
+      "mustn’t",
+      "can’t",
+      "won’t"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Users ___ install software without permission.",
+    "options": [
+      "must not",
+      "must",
+      "can",
+      "should"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "An operating system ___ manage hardware and software.",
+    "options": [
+      "can",
+      "may",
+      "mustn’t",
+      "shouldn’t"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "You ___ use Windows or Linux as an operating system.",
+    "options": [
+      "can",
+      "mustn’t",
+      "shouldn’t",
+      "couldn’t"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A computer ___ work without an operating system.",
+    "options": [
+      "cannot",
+      "can",
+      "should",
+      "may"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Students ___ follow computer lab rules.",
+    "options": [
+      "must",
+      "can’t",
+      "may",
+      "won’t"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "I ___ finish the task yesterday.",
+    "options": [
+      "had to",
+      "have to",
+      "must",
+      "must have"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "She ___ use the internet in her childhood.",
+    "options": [
+      "could",
+      "can",
+      "may",
+      "must"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "We ___ submit the project last week.",
+    "options": [
+      "had to",
+      "must",
+      "have to",
+      "can"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "In the past, people ___ access information easily.",
+    "options": [
+      "couldn’t",
+      "can’t",
+      "don’t",
+      "won’t"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Before smartphones, people ___ use landline phones.",
+    "options": [
+      "had to",
+      "have to",
+      "must",
+      "can"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Digital devices ___ changed our lifestyle.",
+    "options": [
+      "have",
+      "had",
+      "having",
+      "has"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "I ___ my password recently.",
+    "options": [
+      "have changed",
+      "changed",
+      "change",
+      "changing"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "She ___ never shared her personal data.",
+    "options": [
+      "has",
+      "had",
+      "have",
+      "is"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "We ___ several cyber attacks this year.",
+    "options": [
+      "have faced",
+      "faced",
+      "face",
+      "facing"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Cybersecurity ___ become very important today.",
+    "options": [
+      "has",
+      "have",
+      "had",
+      "is"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Hackers ___ many systems worldwide.",
+    "options": [
+      "have attacked",
+      "attacked",
+      "attack",
+      "attacking"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Users ___ learned the importance of strong passwords.",
+    "options": [
+      "have",
+      "has",
+      "had",
+      "having"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "___, connect the cables to the router.",
+    "options": [
+      "First",
+      "Finally",
+      "Then",
+      "Last"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "___, configure the network settings.",
+    "options": [
+      "Next",
+      "Before",
+      "Last",
+      "Early"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "___, test the network connection.",
+    "options": [
+      "Finally",
+      "First",
+      "Next",
+      "Before"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A network allows computers to ___ data.",
+    "options": [
+      "share",
+      "save",
+      "delete",
+      "destroy"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Sequencing words help organize ___.",
+    "options": [
+      "steps",
+      "errors",
+      "devices",
+      "files"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Please ___ the computer before leaving.",
+    "options": [
+      "turn off",
+      "turn on",
+      "set up",
+      "log in"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The technician will ___ the network system.",
+    "options": [
+      "set up",
+      "take off",
+      "give up",
+      "shut down"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "“Log in” means ___.",
+    "options": [
+      "enter a system",
+      "close a program",
+      "break a network",
+      "remove hardware"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Star topology is a type of network ___.",
+    "options": [
+      "structure",
+      "software",
+      "virus",
+      "cable"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "In a bus topology, all devices are connected to a ___ cable.",
+    "options": [
+      "single",
+      "double",
+      "separate",
+      "broken"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "I ___ play football tomorrow.",
+    "options": [
+      "will",
+      "am",
+      "do",
+      "did"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "She ___ start swimming lessons next week.",
+    "options": [
+      "will",
+      "is",
+      "has",
+      "was"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "We ___ watch the match this evening.",
+    "options": [
+      "will",
+      "are",
+      "did",
+      "have"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "He ___ join the chess club soon.",
+    "options": [
+      "will",
+      "joins",
+      "joined",
+      "joining"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "My hobby ___ help me relax.",
+    "options": [
+      "will",
+      "is",
+      "was",
+      "has"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "They ___ go jogging in the park tomorrow morning.",
+    "options": [
+      "will",
+      "are",
+      "do",
+      "did"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "I think our team ___ win the game.",
+    "options": [
+      "will",
+      "won",
+      "wins",
+      "is"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "She ___ learn a new sport this year.",
+    "options": [
+      "will",
+      "has",
+      "had",
+      "was"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "This laptop is ___ .",
+    "options": [
+      "mine",
+      "my",
+      "me",
+      "I"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The programmer fixed the bug ___ .",
+    "options": [
+      "himself",
+      "him",
+      "his",
+      "he"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "___ work as a software developer.",
+    "options": [
+      "I",
+      "Me",
+      "Mine",
+      "My"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The manager gave ___ a new task.",
+    "options": [
+      "us",
+      "we",
+      "our",
+      "ours"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "These computers are ___ .",
+    "options": [
+      "theirs",
+      "them",
+      "they",
+      "their"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "___ is responsible for system security.",
+    "options": [
+      "He",
+      "Him",
+      "His",
+      "Himself"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "This project belongs to ___ .",
+    "options": [
+      "her",
+      "she",
+      "hers",
+      "herself"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "IT specialists improve ___ skills regularly.",
+    "options": [
+      "their",
+      "them",
+      "they",
+      "theirs"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "You ___ update your software regularly.",
+    "options": [
+      "should",
+      "mustn’t",
+      "can’t",
+      "won’t"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Why don’t we ___ this problem together?",
+    "options": [
+      "solve",
+      "solved",
+      "solving",
+      "solves"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "I suggest ___ a backup first.",
+    "options": [
+      "making",
+      "make",
+      "made",
+      "makes"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "You ___ try restarting the system.",
+    "options": [
+      "should",
+      "must not",
+      "couldn’t",
+      "won’t"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Comments should be ___.",
+    "options": [
+      "polite",
+      "rude",
+      "offensive",
+      "careless"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "It’s a good idea to ___ feedback online.",
+    "options": [
+      "give",
+      "giving",
+      "gave",
+      "gives"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "You ___ be careful with your words in comments.",
+    "options": [
+      "should",
+      "can’t",
+      "mustn’t",
+      "won’t"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Let’s ___ our opinion clearly.",
+    "options": [
+      "express",
+      "expressed",
+      "expressing",
+      "expresses"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Please ___ a decision quickly.",
+    "options": [
+      "make",
+      "do",
+      "take",
+      "bring"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "I usually ___ homework online.",
+    "options": [
+      "do",
+      "make",
+      "have",
+      "take"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "We ___ a meeting about the website design.",
+    "options": [
+      "have",
+      "make",
+      "do",
+      "bring"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "He ___ notes while creating the website.",
+    "options": [
+      "takes",
+      "makes",
+      "does",
+      "brings"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "This link will ___ you to the homepage.",
+    "options": [
+      "take",
+      "bring",
+      "make",
+      "do"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Please ___ changes to the website layout.",
+    "options": [
+      "make",
+      "do",
+      "take",
+      "bring"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Users ___ mistakes when filling forms.",
+    "options": [
+      "make",
+      "do",
+      "take",
+      "bring"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "The website ___ useful information.",
+    "options": [
+      "brings",
+      "takes",
+      "makes",
+      "does"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A security system is something ___ protects data.",
+    "options": [
+      "that",
+      "who",
+      "where",
+      "when"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "This is the software ___ we use for protection.",
+    "options": [
+      "that",
+      "who",
+      "whose",
+      "where"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A firewall is a tool ___ blocks attacks.",
+    "options": [
+      "that",
+      "who",
+      "which not",
+      "when"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "This is the company ___ products are very secure.",
+    "options": [
+      "whose",
+      "who",
+      "that",
+      "which"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A hacker is a person ___ tries to break security.",
+    "options": [
+      "who",
+      "which",
+      "where",
+      "whose"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "This is the system ___ is installed on servers.",
+    "options": [
+      "that",
+      "who",
+      "when",
+      "whose"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "Antivirus software is something ___ we need.",
+    "options": [
+      "that",
+      "who",
+      "where",
+      "when"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "q": "A security system protects information ___ is important.",
+    "options": [
+      "that",
+      "who",
+      "where",
+      "when"
+    ],
+    "answerIndex": 0
+  }
+];
